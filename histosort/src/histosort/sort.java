@@ -27,10 +27,16 @@ public class sort {
             ints.add(input);
             input = in.nextInt();
         }
-        histoInt();
-        insertionSort();
+         histoInt();
+        System.out.println("For selection Sort Enter 1 For insertion sort Enter 2");
+        Scanner choose = new Scanner(System.in);
+        int option = choose.nextInt();
+        if (option == 2){
+       insertionSort();
+        } else if (option == 1){
         selectionSort();
-
+        }
+        
     }
 
     public void histoInt() {
@@ -48,12 +54,13 @@ public class sort {
     }
 
     public void insertionSort() {
-        for (int k = 1; k < ints.size(); k++) {
-            int temp = ints.get(k);
-            int j;
+        for (Integer k = 1; k < ints.size(); k++) {
+            Integer temp = ints.get(k);
+            Integer j;
             for (j = k - 1; j >= 0 && temp < ints.get(j); j--) {
-                ints.get(j) = ints.get(j);
-                ints[j+1] = temp;
+                ints.set(j+1, ints.get(j));
+                ints.set(j+1, temp);
+                System.out.println("The sorted values are:" + ints);
             }
         }
     }
