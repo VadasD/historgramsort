@@ -72,7 +72,9 @@ public class sort {
 
                 int minIndex = k;
                 for (int j = k + 1; j < ints.size(); j++) {
+                    System.out.println("searches for a number which is lower than" + ints.get(minIndex));
                     if (ints.get(j) < ints.get(minIndex)) {
+                        System.out.println(ints.get(j) + "is smaller than" + ints.get(minIndex));
                         minIndex = j;
                     }
                 }
